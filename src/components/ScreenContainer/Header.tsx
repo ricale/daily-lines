@@ -1,3 +1,7 @@
+import React, { useMemo } from 'react';
+import LinearGradient from 'react-native-linear-gradient';
+import { StyledComponent } from 'styled-components';
+
 import styled, { css } from 'themes';
 
 type ContainerProps = {
@@ -20,6 +24,17 @@ const Row = styled.View`
     align-items: center;
     flex: 1;
 `;
+
+const RowWithGradient = styled(LinearGradient).attrs({
+    colors: ['rgba(0,0,0,0.8)', 'rgba(0,0,0,0.1)'],
+})`
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+
 const LeftContainer = styled.View`
 `;
 const ChildrenContainer = styled.View`
@@ -35,15 +50,17 @@ type ScreenContainerHeaderProps = {
     children?: React.ReactNode
 }
 const ScreenContainerHeader = ({
-    float,
+    float = true,
     left,
     right,
     children,
 }: ScreenContainerHeaderProps) => {
-    const RowComp = Row;
+    const RowComp: StyledComponent<any, any, any> = useMemo(() => {
+        return float ? RowWithGradient : Row;
+    }, [float]);
 
     return (
-        <Container>
+        <Container float={float}>
             <RowComp>
                 <LeftContainer>
                     {left}

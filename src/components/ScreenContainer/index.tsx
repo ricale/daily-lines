@@ -2,12 +2,17 @@ import React from 'react';
 
 import styled from 'themes';
 
+import Button from '../Button';
+import Text from '../Text';
 import KeyboardAvoidingView from '../KeyboardAvoidingView';
-import Header from './Header';
 
-const Container = styled.View`
-`;
-const Content = styled.View`
+import Container from './Container';
+import Header from './Header';
+import Content from './Content';
+
+const Title = styled(Text)`
+  font-size: ${p => p.theme.text.h4.fontSize}px;
+  color: ${p => p.theme.colors.colorOnBackground};
 `;
 
 type ScreenContainerProps = {
@@ -42,23 +47,32 @@ const ScreenContainer = ({
         <Container style={containerStyle}>
             {headerShown &&
                 <Header
-                    // left={
-                    //     headerLeft !== undefined ? headerLeft :
-                    //         <Button></Button>
-                    // }
-                    />
+                    left={
+                        headerLeft !== undefined ? headerLeft :
+                            <Button>a</Button>
+                    }
+                    right={headerRight}
+                    float={headerFloat}>
+                    {!!title &&
+                        <Title>{title}</Title>
+                    }
+                </Header>
             }
 
             {keyboardAvoiding &&
                 <KeyboardAvoidingView>
                     <Content
+                        {...props}
                         />
                 </KeyboardAvoidingView>
             }
             {!keyboardAvoiding &&
                 <Content
+                    {...props}
                     />
             }
         </Container>
     )
 }
+
+export default ScreenContainer;

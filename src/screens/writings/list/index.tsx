@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+
+import { ScreenContainer, Text } from 'components';
 
 const WritingsListScreen = () => {
     return (
-        <View>
+        <ScreenContainer>
             <Text>WritingsListScreen</Text>
-        </View>
+        </ScreenContainer>
     );
 }
 

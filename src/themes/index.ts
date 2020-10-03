@@ -3,6 +3,7 @@ import { ThemeContext, ReactNativeThemedStyledComponentsModule } from 'styled-co
 import { useContext } from 'react';
 
 import normal, { NormalTheme } from './normal';
+import getValue from './getValue';
 
 const {
     default: styled,
@@ -18,6 +19,8 @@ export {
     css,
     ThemeProvider,
     normal,
+    getValue,
+    getValue as tval,
 };
 
 export default styled;

@@ -10,6 +10,7 @@ export interface NormalTheme extends DefaultTheme {
     gutter: number
     spacing: number
     headerHeight: number
+    buttonHeight: number
   }
   text: {
     h1: { [key: string]: any }
@@ -27,6 +28,7 @@ export interface NormalTheme extends DefaultTheme {
 const normalTheme: NormalTheme = {
   colors: {
     colorBackground: '#333333',
+    colorOnBackground: '#FFFFFF',
   },
   dimens: { // FIXME
     bigMargin: base * 2,
@@ -35,6 +37,7 @@ const normalTheme: NormalTheme = {
     spacing: base * 0.25,
 
     headerHeight: base * 3,
+    buttonHeight: base * 3,
   },
 
   text: {
