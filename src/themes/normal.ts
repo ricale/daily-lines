@@ -30,7 +30,7 @@ const normalTheme: NormalTheme = {
     colorBackground: '#333333',
     colorOnBackground: '#FFFFFF',
   },
-  dimens: { // FIXME
+  dimens: {
     bigMargin: base * 2,
     margin: base * 1,
     gutter: base * 0.5,
