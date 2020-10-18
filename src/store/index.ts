@@ -12,6 +12,9 @@ import {
 import rootSaga from './saga';
 import rootReducer from './reducer';
 
+export * from './actions';
+export * from './types';
+
 function getStore(
     preloadedState: Partial<RootState> = {},
     middlewares: any[] = []

@@ -1,8 +1,8 @@
-import { LocalStorage } from 'utils';
+import Model from 'models';
 import factoryWatchAction from '../_utils/factoryWatchAction';
 
 async function getWritings() {
-    return await LocalStorage.getJson('writings');
+    return Model.getWritings();
 }
 
 export const watchGetWritings = factoryWatchAction(

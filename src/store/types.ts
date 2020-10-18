@@ -1,7 +1,9 @@
 import { Reducer, CombinedState } from "redux";
 
-export interface RootState {
+import { WritingsState } from './writings/types';
 
+export interface RootState {
+    writings: WritingsState
 }
 
 export type BaseAction = {
@@ -15,3 +17,5 @@ export type BaseAction = {
 }
 
 export type RootReducer = Reducer<CombinedState<RootState>, BaseAction>
+
+export * from './writings/types';

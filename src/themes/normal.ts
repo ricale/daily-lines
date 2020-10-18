@@ -27,8 +27,13 @@ export interface NormalTheme extends DefaultTheme {
 }
 const normalTheme: NormalTheme = {
   colors: {
+    colorPrimary: 'gold',
+    colorOnPrimary: 'black',
+
     colorBackground: '#333333',
     colorOnBackground: '#FFFFFF',
+
+    colorDisabled: '#AAA',
   },
   dimens: {
     bigMargin: base * 2,

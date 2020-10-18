@@ -7,11 +7,13 @@ import {
 } from '@react-navigation/stack';
 
 import {
-    WritingsListScreen
+    WritingsListScreen,
+    WritingsNewScreen,
 } from 'screens';
 
 export type RootStackParamList = {
     WritingsList: undefined
+    WritingsNew: undefined
 }
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -23,6 +25,7 @@ const AppRouter = () => {
                     headerShown: false
                 }}>
                 <Stack.Screen name='WritingsList' component={WritingsListScreen} />
+                <Stack.Screen name='WritingsNew' component={WritingsNewScreen} />
 
             </Stack.Navigator>
         </NavigationContainer>
@@ -30,3 +33,4 @@ const AppRouter = () => {
 }
 
 export default AppRouter;
+export * from './utils';
